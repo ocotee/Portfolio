@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>미술관 정보</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Gugi&display=swap");
+      .background {
+        width: 100%;
+        height: 100vh;
+        background-image: url(https://media.discordapp.net/attachments/823454642213355551/843416180407795732/bec92714d1668795.png?width=1010&height=568);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+      }
+      #back {
+        font-size: large;
+        text-align: center;
+        position: relative;
+        top: 450px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      ul {
+        list-style: none;
+        margin: 27px;
+        font-size: 180%;
+        font-family: "Noto Sans KR", sans-serif;
+        /* color: #fff; */
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      figcaption {
+        font-size: 300%;
+        font-family: "Gugi", cursive;
+        margin: 20px;
+        padding: auto;
+        color: rgba(0, 0, 0, 0.76);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      p.indent {
+        padding-left: 1em;
+      }
+    </style>
+  </head>
+  <body class="background">
+    <div class="container">
+      <div class="box">
+        <figcaption>
+          <p class="indent"><b>서울 미술관 지도</b></p>
+        </figcaption>
+        <ul>
+          <li>서울시에 있는 미술관의 위치와</li>
+          <li>각 미술관에 관한</li>
+          <li>정보를 알려주는 사이트입니다.</li>
+          <li>아이콘을 누르면 미술관 정보가 뜹니다.</li>
+        </ul>
+
+        <p id="back">
+          <a href="map.html" style="text-decoration: none; color: white"
+            >지도 페이지로 돌아가기</a
+          >
+        </p>
+      </div>
+
+      <!-- 페이지 왼쪽
+      <img src="./img/inform/여백의 미.png" alt="여백의 미" width="60%" height="100%"> -->
+    </div>
+
+    <script></script>
+  </body>
+</html>

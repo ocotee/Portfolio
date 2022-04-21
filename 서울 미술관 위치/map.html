@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>지도</title>
+    <style>
+      header {
+        height: 45px;
+        padding: 1rem;
+        color: rgb(31, 29, 29);
+        background: #cccccc;
+        font-weight: bold;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .one {
+        width: 200px;
+        height: 112px;
+        background-color: rgb(219, 219, 219);
+        position: absolute;
+        top: 75vh;
+        left: 37vw;
+      }
+      .two {
+        width: 200px;
+        height: 112px;
+        background-color: rgb(219, 219, 219);
+        position: absolute;
+        top: 72vh;
+        left: 44vw;
+      }
+      .three {
+        width: 200px;
+        height: 112px;
+        background-color: rgb(219, 219, 219);
+        position: absolute;
+        top: 56vh;
+        left: 35vw;
+      }
+      .four {
+        width: 200px;
+        height: 112px;
+        background-color: rgb(219, 219, 219);
+        position: absolute;
+        top: 55vh;
+        left: 45vw;
+      }
+      .five {
+        width: 200px;
+        height: 112px;
+        background-color: rgb(219, 219, 219);
+        position: absolute;
+        top: 46vh;
+        left: 45vw;
+      }
+      .six {
+        width: 200px;
+        height: 112px;
+        background-color: rgb(219, 219, 219);
+        position: absolute;
+        top: 41vh;
+        left: 37vw;
+      }
+      .seven {
+        width: 200px;
+        height: 112px;
+        background-color: rgb(219, 219, 219);
+        position: absolute;
+        top: 42vh;
+        left: 39vw;
+      }
+      .eight {
+        width: 200px;
+        height: 112px;
+        background-color: rgb(219, 219, 219);
+        position: absolute;
+        top: 15vh;
+        left: 51vw;
+      }
+      .nine {
+        width: 200px;
+        height: 112px;
+        background-color: rgb(219, 219, 219);
+        position: absolute;
+        top: 24vh;
+        left: 35vw;
+      }
+      .ten {
+        width: 200px;
+        height: 112px;
+        background-color: rgb(219, 219, 219);
+        position: absolute;
+        top: 30vh;
+        left: 35vw;
+      }
+
+      .close {
+        background-color: rgb(219, 219, 219);
+        border: 0;
+        outline: 0;
+        position: absolute;
+        top: 9vh;
+        left: 8vw;
+        color: rgb(148, 13, 13);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>
+        <!-- 미술관 정보 안내하는 곳으로 연결해놓음 -->
+        <a
+          href="javascript:history.back();"
+          style="text-decoration: none; color: black; z-index: 1"
+          >서울 미술관 지도</a
+        >
+      </h1>
+    </header>
+    <hr />
+    <div style="position: absolute; top:12vh; left: 12vw; right: 24vw;">
+      <img src="./img/지도.png" alt="서울시" width="100%" height="100%" />
+    </div>
+
+    <div style="position: absolute; top: 87vh; left: 43vw">
+      <img id="1" src="./img/미술관 아이콘.png" alt=""/>
+    </div>
+    <div style="position: absolute; top: 83vh; left: 49vw">
+      <img id="2" src="./img/미술관 아이콘.png" alt="" />
+    </div>
+    <div style="position: absolute; top: 67vh; left: 40vw">
+      <img id="3" src="./img/미술관 아이콘.png" alt="" />
+    </div>
+    <div style="position: absolute; top: 66vh; left: 50vw">
+      <img id="4" src="./img/미술관 아이콘.png" alt="" />
+    </div>
+    <div style="position: absolute; top: 56vh; left: 50vw">
+      <img id="5" src="./img/미술관 아이콘.png" alt="" />
+    </div>
+    <div style="position: absolute; top: 53vh; left: 42vw">
+      <img id="6" src="./img/미술관 아이콘.png" alt="" />
+    </div>
+    <div style="position: absolute; top: 53vh; left: 44vw">
+      <img id="7" src="./img/미술관 아이콘.png" alt="" />
+    </div>
+    <div style="position: absolute; top: 27vh; left: 57vw">
+      <img id="8" src="./img/미술관 아이콘.png" alt="" />
+    </div>
+    <div style="position: absolute; top: 36vh; left: 40vw">
+      <img id="9" src="./img/미술관 아이콘.png" alt="" />
+    </div>
+    <div style="position: absolute; top: 42vh; left: 40vw">
+      <img id="10" src="./img/미술관 아이콘.png" alt="" />
+    </div>
+
+    <div id="inform" class="list-group"></div>
+
+    <script>
+      document.getElementById("1").addEventListener("click", (e) => {
+        let ifm = document.getElementById("inform");
+        let creDiv = document.createElement("div");
+        let btn = document.createElement("button");
+        let text = "관악구 남현동에 위치해 있습니다.<br>관람료는 무료입니다.";
+
+        creDiv.className = "one";
+
+        btn.className = "close";
+        btn.innerHTML = "[닫기]";
+
+        // creDiv.append(text);
+        creDiv.innerHTML = `<b>서울시립 남서울 미술관</b><br/> ${text}`;
+        creDiv.appendChild(btn);
+
+        ifm.appendChild(creDiv);
+
+        btn.onclick = (e) => {
+          let pnode = e.target.parentNode;
+          ifm.removeChild(pnode);
+        };
+      });
+      document.getElementById("2").addEventListener("click", (e) => {
+        let ifm = document.getElementById("inform");
+        let creDiv = document.createElement("div");
+        let btn = document.createElement("button");
+        let text = "서초구 서초동에 위치해 있습니다.<br>관람료는 유료입니다.";
+
+        creDiv.className = "two";
+
+        btn.className = "close";
+        btn.innerHTML = "[닫기]";
+
+        creDiv.innerHTML = `<b>한가람 미술관</b><br/> ${text}`;
+        creDiv.appendChild(btn);
+
+        ifm.appendChild(creDiv);
+
+        btn.onclick = (e) => {
+          let pnode = e.target.parentNode;
+          ifm.removeChild(pnode);
+        };
+      });
+      document.getElementById("3").addEventListener("click", (e) => {
+        let ifm = document.getElementById("inform");
+        let creDiv = document.createElement("div");
+        let btn = document.createElement("button");
+
+        creDiv.className = "three";
+
+        btn.className = "close";
+        btn.innerHTML = "[닫기]";
+
+        creDiv.innerHTML = "<b>아모레퍼시픽미술관</b> <br/> 용산구 한강로동에 위치해 있습니다. <br>관람료는 유료입니다.";
+        creDiv.appendChild(btn);
+
+        ifm.appendChild(creDiv);
+
+        btn.onclick = (e) => {
+          let pnode = e.target.parentNode;
+          ifm.removeChild(pnode);
+        };
+      });
+      document.getElementById("4").addEventListener("click", (e) => {
+        let ifm = document.getElementById("inform");
+        let creDiv = document.createElement("div");
+        let btn = document.createElement("button");
+
+        creDiv.className = "four";
+
+        btn.className = "close";
+        btn.innerHTML = "[닫기]";
+
+        creDiv.innerHTML = "<b>k현대 미술관</b><br/> 강남구 압구정동에 위치해 있습니다. <br>관람료는 유료입니다.";
+        creDiv.appendChild(btn);
+
+        ifm.appendChild(creDiv);
+
+        btn.onclick = (e) => {
+          let pnode = e.target.parentNode;
+          ifm.removeChild(pnode);
+        };
+      });
+      document.getElementById("5").addEventListener("click", (e) => {
+        let ifm = document.getElementById("inform");
+        let creDiv = document.createElement("div");
+        let btn = document.createElement("button");
+
+        creDiv.className = "five";
+
+        btn.className = "close";
+        btn.innerHTML = "[닫기]";
+
+        creDiv.innerHTML = "<b>디 뮤지엄</b><br/>성동구 성수동에 위치해 있습니다. <br>전시 준비 중입니다.";
+        creDiv.appendChild(btn);
+
+        ifm.appendChild(creDiv);
+
+        btn.onclick = (e) => {
+          let pnode = e.target.parentNode;
+          ifm.removeChild(pnode);
+        };
+      });
+      document.getElementById("6").addEventListener("click", (e) => {
+        let ifm = document.getElementById("inform");
+        let creDiv = document.createElement("div");
+        let btn = document.createElement("button");
+
+        creDiv.className = "six";
+
+        btn.className = "close";
+        btn.innerHTML = "[닫기]";
+
+        creDiv.innerHTML = "<b>oci미술관</b><br/>종로구 수송동에 위치해 있습니다. <br>관람료는 무료입니다.";
+        creDiv.appendChild(btn);
+
+        ifm.appendChild(creDiv);
+
+        btn.onclick = (e) => {
+          let pnode = e.target.parentNode;
+          ifm.removeChild(pnode);
+        };
+      });
+      document.getElementById("7").addEventListener("click", (e) => {
+        let ifm = document.getElementById("inform");
+        let creDiv = document.createElement("div");
+        let btn = document.createElement("button");
+
+        creDiv.className = "seven";
+
+        btn.className = "close";
+        btn.innerHTML = "[닫기]";
+
+        creDiv.innerHTML = "<b>백악 미술관</b><br/>종로구 관훈동에 위치해 있습니다. <br>관람료는 무료입니다.";
+        creDiv.appendChild(btn);
+
+        ifm.appendChild(creDiv);
+
+        btn.onclick = (e) => {
+          let pnode = e.target.parentNode;
+          ifm.removeChild(pnode);
+        };
+      });
+      document.getElementById("8").addEventListener("click", (e) => {
+        let ifm = document.getElementById("inform");
+        let creDiv = document.createElement("div");
+        let btn = document.createElement("button");
+
+        creDiv.className = "eight";
+
+        btn.className = "close";
+        btn.innerHTML = "[닫기]";
+
+        creDiv.innerHTML = "<b>서울 시립 북서울 미술관</b><br/>노원구 중계동2.3동에 위치해 있습니다. <br>관람료는 무료입니다.";
+        creDiv.appendChild(btn);
+
+        ifm.appendChild(creDiv);
+
+        btn.onclick = (e) => {
+          let pnode = e.target.parentNode;
+          ifm.removeChild(pnode);
+        };
+      });
+      document.getElementById("9").addEventListener("click", (e) => {
+        let ifm = document.getElementById("inform");
+        let creDiv = document.createElement("div");
+        let btn = document.createElement("button");
+
+        creDiv.className = "nine";
+
+        btn.className = "close";
+        btn.innerHTML = "[닫기]";
+
+        creDiv.innerHTML = "토탈 미술관<br/>종로구 평창동에 위치해 있습니다. <br/>관람료는 변동입니다.";
+        creDiv.appendChild(btn);
+
+        ifm.appendChild(creDiv);
+
+        btn.onclick = (e) => {
+          let pnode = e.target.parentNode;
+          ifm.removeChild(pnode);
+        };
+      });
+      document.getElementById("10").addEventListener("click", (e) => {
+        let ifm = document.getElementById("inform");
+        let creDiv = document.createElement("div");
+        let btn = document.createElement("button");
+
+        creDiv.className = "ten";
+
+        btn.className = "close";
+        btn.innerHTML = "[닫기]";
+
+        creDiv.innerHTML = "석파정 서울 미술관<br/>종로구 부암동에 위치해 있습니다. <br/>관람료는 유료입니다.";
+        creDiv.appendChild(btn);
+
+        ifm.appendChild(creDiv);
+
+        btn.onclick = (e) => {
+          let pnode = e.target.parentNode;
+          ifm.removeChild(pnode);
+        };
+      });
+    </script>
+  </body>
+</html>

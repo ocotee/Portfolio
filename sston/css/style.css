@@ -1,0 +1,118 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+label {
+  display: flex;
+  align-items: center;
+  position: relative;
+  top: 30px;
+  left: 30px;
+  transition: 0.5s;
+}
+.sidebar-icon {
+  font-size: 3rem;
+  margin-right: 10px;
+}
+.bookmark-btt {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-size: 2rem;
+  font-family: "Jua", sans-serif;
+  padding: 5px;
+}
+section {
+  background-color: #191970;
+  color: #fff;
+  width: 200px;
+  padding-top: 30px;
+  padding-left: 30px;
+  position: absolute;
+  top: 0;
+  left: -200px;
+  bottom: 0;
+  transition: 1s ease;
+}
+.bookmark-lists {
+  padding-left: 45px;
+}
+.bookmark {
+  margin: 30px 0;
+}
+.bookmark:nth-child(1) {
+  margin-top: 50px;
+}
+.bookmark a {
+  color: #fff;
+  text-decoration: none;
+}
+.img1 {
+  width: 150px;
+  height: 100px;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Jua&display=swap");
+
+#map {
+  position: relative;
+  left: 33%;
+}
+
+.startX,
+.startY {
+  width: 450px;
+  height: 50px;
+  font-size: 15px;
+  background-color: blanchedalmond;
+}
+.endX,
+.endY {
+  width: 450px;
+  height: 50px;
+  font-size: 15px;
+  background-color: blanchedalmond;
+}
+
+.btn {
+  width: 100px;
+  height: 100px;
+}
+
+.text {
+  width: 1000px;
+  height: 100px;
+  display: flex;
+}
+
+.difference_map {
+  position: relative;
+  top: 100px;
+  left: 22%;
+  width: 1007px;
+  height: 607px;
+  border: 3px solid #000000;
+  border-radius: 5px;
+}
+.inputs1,
+.inputs2 {
+  width: 450px;
+}
+
+.street {
+  position: relative;
+  top: 100px;
+  left: 22%;
+  width: 250px;
+  height: 610px;
+  background: rgb(198, 210, 221);
+}
+#result {
+  color: black;
+}
+
+.input_group {
+  display: flex;
+  height: 200px;
+}
